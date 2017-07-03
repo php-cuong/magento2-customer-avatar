@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="PHPCuong_CustomerAttributes::css/avatar.css"/>
+        <script src="PHPCuong_CustomerAttributes::js/avatar-validation.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Customer\Block\Form\Edit" name="customer_edit" template="PHPCuong_CustomerAttributes::form/edit.phtml" cacheable="false">
+                <container name="form.additional.info" as="form_additional_info"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

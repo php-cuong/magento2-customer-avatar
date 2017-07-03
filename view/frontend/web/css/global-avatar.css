@@ -1,0 +1,23 @@
+/*
+* @Author: Ngo Quang Cuong
+* @Date:   2017-07-03 16:29:29
+* @Last Modified by:   nquangcuong
+* @Last Modified time: 2017-07-03 18:40:05
+*/
+@media(min-width: 768px) {
+    .customer-welcome .customer-name {
+        display: block;
+        height: 25px;
+    }
+    .customer-welcome ul.header.links:before {
+        right: 5px;
+    }
+    .customer-welcome ul.header.links:after {
+        right: 4px;
+    }
+}
+.customer-welcome .customer-name .avatar-header-links {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
