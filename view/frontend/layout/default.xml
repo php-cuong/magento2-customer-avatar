@@ -11,13 +11,10 @@
         <css src="PHPCuong_CustomerAttributes::css/review-item.css"/>
     </head>
     <body>
-        <referenceBlock name="customer" cacheable="false">
+        <referenceBlock name="customer">
             <action method='setTemplate'>
                 <argument name='template' xsi:type='string'>PHPCuong_CustomerAttributes::account/customer.phtml</argument>
             </action>
-        </referenceBlock>
-        <referenceBlock name="header.links">
-            <block class="Magento\Customer\Block\Account\Customer" name="customer-avatar" template="PHPCuong_CustomerAttributes::account/customer.phtml" before="-" cacheable="false" display="false"/>
         </referenceBlock>
     </body>
 </page>

@@ -3,4 +3,7 @@
     <type name="Magento\Customer\Model\Metadata\Form\Image">
         <plugin name="Validate_Image" type="PHPCuong\CustomerAttributes\Plugin\Metadata\Form\Image" sortOrder="1"/>
     </type>
+    <type name="Magento\Customer\CustomerData\Customer">
+        <plugin name="customerData" type="PHPCuong\CustomerAttributes\CustomerData\Customer" sortOrder="1"/>
+    </type>
 </config>

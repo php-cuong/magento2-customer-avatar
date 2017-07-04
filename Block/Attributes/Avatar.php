@@ -4,7 +4,7 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-02 12:04:38
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-04 11:46:40
+ * @Last Modified time: 2017-07-04 22:19:40
  * @website: http://giaphugroup.com
  */
 
@@ -75,16 +75,10 @@ class Avatar extends \Magento\Framework\View\Element\Template
      * Get the avatar of the customer is already logged in
      * @return string
      */
-    public function getCustomerAvatarAlreadyLoggedin()
+    public function getAvatarCurrentCustomer($file)
     {
-        $customerSession = $this->objectManager->get('Magento\Customer\Model\Session');
-        if($customerSession->isLoggedIn()) {
-            if (!empty($customerSession->getCustomer()->getCustomerPicture())) {
-                $file = $customerSession->getCustomer()->getCustomerPicture();
-                if ($this->checkImageFile(base64_encode($file)) === true) {
-                    return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($file)]);
-                }
-            }
+        if ($this->checkImageFile(base64_encode($file)) === true) {
+            return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($file)]);
         }
         return $this->viewFileUrl->getUrl('PHPCuong_CustomerAttributes::images/no-profile-photo.jpg');
     }

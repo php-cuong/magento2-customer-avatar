@@ -16,7 +16,7 @@
               data-toggle="dropdown"
               data-trigger-keypress-button="true"
               data-bind="scope: 'customer'">
-            <img src="<?php echo $block->getLayout()->createBlock('\PHPCuong\CustomerAttributes\Block\Attributes\Avatar')->getCustomerAvatarAlreadyLoggedin(); ?>" width="30px" height="25px" class="avatar-header-links action switch" data-action="customer-menu-toggle"/>
+            <img data-bind="attr:{src: customer().avatar}" width="30px" height="25px" class="avatar-header-links action switch" data-action="customer-menu-toggle" tabindex="-1"/>
         </span>
         <script type="text/x-magento-init">
         {
