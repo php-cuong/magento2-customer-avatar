@@ -1,0 +1,63 @@
+/*
+* @Author: Ngo Quang Cuong
+* @Date:   2017-07-04 11:02:13
+* @Last Modified by:   nquangcuong
+* @Last Modified time: 2017-07-04 11:22:24
+*/
+.review-item .review-image {
+    width: 70px;
+    padding: 0px 10px 5px 0px;
+    float: left;
+}
+.review-item .review-image img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+.review-item .review-infor {
+    display: inline-block;
+}
+.review-item .review-infor .review-title {
+    padding: 0px;
+    margin: 0px;
+    line-height: inherit;
+    padding-bottom: 0px;
+}
+.review-item .review-infor .review-details {
+    color: gray;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+.review-item .review-infor .review-details .review-ratings {
+    float: inherit;
+    padding-bottom: 5px;
+    margin: 0px;
+}
+.review-item .review-infor .review-details .review-ratings .rating-label {
+    display: none;
+}
+.review-item .review-content {
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+@media(max-width: 767px) {
+    .review-item .review-image {
+        width: 60px;
+        padding: 0px 10px 5px 0px;
+        float: left;
+    }
+    .review-item .review-image img {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+    }
+    .review-item .review-infor .review-title {
+        font-size: 13px;
+    }
+    .review-item .review-infor .review-details {
+        color: gray;
+        padding-bottom: 10px;
+        font-size: 12px;
+    }
+}

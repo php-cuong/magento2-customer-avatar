@@ -4,7 +4,7 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-02 12:04:38
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-03 22:29:46
+ * @Last Modified time: 2017-07-04 11:46:40
  * @website: http://giaphugroup.com
  */
 
@@ -30,8 +30,7 @@ class Avatar extends \Magento\Framework\View\Element\Template
     /**
      * @var \Magento\Framework\App\Http\Context
      */
-    protected $httpContext;
-
+    protected $customer;
     /**
      *
      * @param Context $context
@@ -45,14 +44,18 @@ class Avatar extends \Magento\Framework\View\Element\Template
         Context $context,
         ObjectManagerInterface $objectManager,
         \Magento\Framework\View\Asset\Repository $viewFileUrl,
-        \Magento\Framework\App\Http\Context $httpContext
+        \Magento\Customer\Model\Customer $customer
     ) {
         $this->objectManager = $objectManager;
         $this->viewFileUrl = $viewFileUrl;
-        $this->httpContext = $httpContext;
+        $this->customer = $customer;
         parent::__construct($context);
     }
 
+    /**
+     * Check the file is already exist in the path.
+     * @return boolean
+     */
     public function checkImageFile($file)
     {
         $file = base64_decode($file);
@@ -68,7 +71,11 @@ class Avatar extends \Magento\Framework\View\Element\Template
         return true;
     }
 
-    public function getVatarFile()
+    /**
+     * Get the avatar of the customer is already logged in
+     * @return string
+     */
+    public function getCustomerAvatarAlreadyLoggedin()
     {
         $customerSession = $this->objectManager->get('Magento\Customer\Model\Session');
         if($customerSession->isLoggedIn()) {
@@ -76,6 +83,23 @@ class Avatar extends \Magento\Framework\View\Element\Template
                 $file = $customerSession->getCustomer()->getCustomerPicture();
                 if ($this->checkImageFile(base64_encode($file)) === true) {
                     return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($file)]);
+                }
+            }
+        }
+        return $this->viewFileUrl->getUrl('PHPCuong_CustomerAttributes::images/no-profile-photo.jpg');
+    }
+
+    /**
+     * Get the avatar of the customer by the customer id
+     * @return string
+     */
+    public function getCustomerAvatarById($customer_id = false)
+    {
+        if ($customer_id) {
+            $customerDetail = $this->customer->load($customer_id);
+            if ($customerDetail && !empty($customerDetail->getCustomerPicture())) {
+                if ($this->checkImageFile(base64_encode($customerDetail->getCustomerPicture())) === true) {
+                    return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($customerDetail->getCustomerPicture())]);
                 }
             }
         }
