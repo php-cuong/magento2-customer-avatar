@@ -4,7 +4,7 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-04 22:42:27
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-05 08:34:51
+ * @Last Modified time: 2017-07-05 14:30:41
  * @website: http://giaphugroup.com
  */
 
@@ -37,7 +37,7 @@ class Uninstall implements UninstallInterface
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      * @SuppressWarnings(PHPMD.NPathComplexity)
      */
-    public function uninstall(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    public function uninstall(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
         $eavSetup = $this->eavSetupFactory->create();
@@ -48,4 +48,3 @@ class Uninstall implements UninstallInterface
         $setup->endSetup();
     }
 }
-
