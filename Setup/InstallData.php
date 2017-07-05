@@ -4,7 +4,7 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-01 08:12:19
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-05 08:34:30
+ * @Last Modified time: 2017-07-05 12:01:21
  * @website: http://giaphugroup.com
  */
 
@@ -73,6 +73,8 @@ class InstallData implements InstallDataInterface
             'sort_order' => 10,
             'position' => 10,
             'system' => 0,
+            'is_used_in_grid' => true,
+            'is_visible_in_grid' => true,
             'is_html_allowed_on_front' => true,
             'visible_on_front' => true
         ]);
