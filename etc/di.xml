@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Customer\Model\Metadata\Form\Image">
-        <plugin name="Validate_Image" type="PHPCuong\CustomerAttributes\Plugin\Metadata\Form\Image" sortOrder="1"/>
+        <plugin name="Validate_Image" type="PHPCuong\CustomerProfilePicture\Plugin\Metadata\Form\Image" sortOrder="1"/>
     </type>
     <type name="Magento\Customer\CustomerData\Customer">
-        <plugin name="customerData" type="PHPCuong\CustomerAttributes\CustomerData\Customer" sortOrder="1"/>
+        <plugin name="customerData" type="PHPCuong\CustomerProfilePicture\Plugin\CustomerData\Customer" sortOrder="1"/>
     </type>
 </config>

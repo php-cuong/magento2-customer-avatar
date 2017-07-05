@@ -4,11 +4,11 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-01 08:12:19
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-01 15:08:33
+ * @Last Modified time: 2017-07-05 08:34:30
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\Setup;
+namespace PHPCuong\CustomerProfilePicture\Setup;
 
 use Magento\Customer\Setup\CustomerSetupFactory;
 use Magento\Customer\Model\Customer;
@@ -63,9 +63,9 @@ class InstallData implements InstallDataInterface
         $attributeSet = $this->attributeSetFactory->create();
         $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
 
-        $customerSetup->addAttribute(Customer::ENTITY, 'customer_picture', [
+        $customerSetup->addAttribute(Customer::ENTITY, 'profile_picture', [
             'type' => 'varchar',
-            'label' => 'Picture',
+            'label' => 'Profile Picture',
             'input' => 'image',
             'required' => false,
             'visible' => true,
@@ -77,7 +77,7 @@ class InstallData implements InstallDataInterface
             'visible_on_front' => true
         ]);
 
-        $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'customer_picture')
+        $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'profile_picture')
         ->addData([
             'attribute_set_id' => $attributeSetId,
             'attribute_group_id' => $attributeGroupId,

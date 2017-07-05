@@ -4,11 +4,11 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-03 15:18:20
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-03 15:32:27
+ * @Last Modified time: 2017-07-05 08:23:06
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\Controller\Avatar;
+namespace PHPCuong\CustomerProfilePicture\Controller\Avatar;
 
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Customer\Api\CustomerMetadataInterface;
@@ -27,16 +27,25 @@ class View extends \Magento\Framework\App\Action\Action
     protected $urlDecoder;
 
     /**
+     * @var \Magento\Framework\App\Response\Http\FileFactory
+     */
+    protected $fileFactory;
+
+    /**
      * @param \Magento\Framework\App\Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     * @param \Magento\Framework\Url\DecoderInterface $urlDecoder
+     * @param \Magento\Framework\App\Response\Http\FileFactory $fileFactory
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
-        \Magento\Framework\Url\DecoderInterface $urlDecoder
+        \Magento\Framework\Url\DecoderInterface $urlDecoder,
+        \Magento\Framework\App\Response\Http\FileFactory $fileFactory
     ) {
         $this->resultRawFactory    = $resultRawFactory;
         $this->urlDecoder  = $urlDecoder;
+        $this->fileFactory = $fileFactory;
         return parent::__construct($context);
     }
 
@@ -108,7 +117,7 @@ class View extends \Magento\Framework\App\Action\Action
             return $resultRaw;
         } else {
             $name = pathinfo($path, PATHINFO_BASENAME);
-            $this->_fileFactory->create(
+            $this->fileFactory->create(
                 $name,
                 ['type' => 'filename', 'value' => $fileName],
                 DirectoryList::MEDIA

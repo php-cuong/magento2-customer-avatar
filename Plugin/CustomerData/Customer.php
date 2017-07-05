@@ -4,31 +4,31 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-04 18:41:56
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-04 22:19:51
+ * @Last Modified time: 2017-07-05 09:04:11
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\CustomerData;
+namespace PHPCuong\CustomerProfilePicture\Plugin\CustomerData;
 
 
 use Magento\Customer\Helper\Session\CurrentCustomer;
 use Magento\Customer\Helper\View;
-use PHPCuong\CustomerAttributes\Block\Attributes\Avatar;
+use PHPCuong\CustomerProfilePicture\Block\Attributes\Avatar;
 
 class Customer
 {
     /**
-     * @var Magento\Customer\Helper\Session\CurrentCustomer
+     * @var CurrentCustomer
      */
     protected $currentCustomer;
 
     /**
-     * @var \Magento\Customer\Helper\View
+     * @var View
      */
     protected $customerViewHelper;
 
     /**
-     * @var \PHPCuong\CustomerAttributes\Block\Attributes\Avatar $avatar
+     * @var Avatar
      */
     protected $customerAvatar;
 
@@ -56,10 +56,15 @@ class Customer
             return [];
         }
         $customer = $this->currentCustomer->getCustomer();
+        if (!empty($customer->getCustomAttribute('profile_picture'))) {
+            $file = $customer->getCustomAttribute('profile_picture')->getValue();
+        } else {
+            $file = '';
+        }
         return [
             'fullname' => $this->customerViewHelper->getCustomerName($customer),
             'firstname' => $customer->getFirstname(),
-            'avatar' => $this->customerAvatar->getAvatarCurrentCustomer($customer->getCustomAttribute('customer_picture')->getValue())
+            'avatar' => $this->customerAvatar->getAvatarCurrentCustomer($file)
         ];
     }
 }

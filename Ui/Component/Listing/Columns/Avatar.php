@@ -4,16 +4,16 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-01 13:23:24
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-01 16:09:13
+ * @Last Modified time: 2017-07-05 10:13:17
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\Ui\Component\Listing\Columns;
+namespace PHPCuong\CustomerProfilePicture\Ui\Component\Listing\Columns;
 
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 
-class Picture extends \Magento\Ui\Component\Listing\Columns\Column
+class Avatar extends \Magento\Ui\Component\Listing\Columns\Column
 {
     /**
      * @var \Magento\Framework\View\Element\AbstractBlock
@@ -53,10 +53,11 @@ class Picture extends \Magento\Ui\Component\Listing\Columns\Column
             $fieldName = $this->getData('name');
             foreach ($dataSource['data']['items'] as & $item) {
                 $customer = new \Magento\Framework\DataObject($item);
-                !empty($customer["customer_picture"]) ? $picture_url = $this->urlBuilder->getUrl(
-                    'customer/index/viewfile/image/'.base64_encode($customer["customer_picture"])) : $picture_url = $this->viewFileUrl->getUrl('PHPCuong_CustomerAttributes::images/no-profile-photo.jpg');
+                $picture_url = !empty($customer["profile_picture"]) ? $this->urlBuilder->getUrl(
+                    'customer/index/viewfile/image/'.base64_encode($customer["profile_picture"])) : $this->viewFileUrl->getUrl('PHPCuong_CustomerProfilePicture::images/no-profile-photo.jpg');
                 $item[$fieldName . '_src'] = $picture_url;
-                $item[$fieldName . '_alt'] = 'picture';
+                $item[$fieldName . '_orig_src'] = $picture_url;
+                $item[$fieldName . '_alt'] = 'The profile picture';
             }
         }
 

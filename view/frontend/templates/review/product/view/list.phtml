@@ -30,7 +30,7 @@
         <?php foreach ($_items as $_review):?>
             <li class="item review-item" itemscope itemprop="review" itemtype="http://schema.org/Review">
                 <div class="review-image">
-                    <img src="<?php echo $block->getLayout()->createBlock('\PHPCuong\CustomerAttributes\Block\Attributes\Avatar')->getCustomerAvatarById($_review->getData('customer_id')); ?>" width="150px" height="150px" alt="profile-picture" />
+                    <img src="<?php echo $block->getLayout()->createBlock('\PHPCuong\CustomerProfilePicture\Block\Attributes\Avatar')->getCustomerAvatarById($_review->getData('customer_id')); ?>" width="150px" height="150px" alt="avatar" />
                 </div>
                 <div class="review-infor">
                     <div class="review-title" itemprop="name"><?php echo $block->escapeHtml($_review->getTitle()) ?></div>

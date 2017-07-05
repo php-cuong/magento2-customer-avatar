@@ -4,18 +4,18 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-03 11:15:40
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-03 14:41:20
+ * @Last Modified time: 2017-07-05 08:33:08
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\Plugin\Metadata\Form;
+namespace PHPCuong\CustomerProfilePicture\Plugin\Metadata\Form;
 
 class Image
 {
     protected $validImage;
 
     public function __construct(
-        \PHPCuong\CustomerAttributes\Model\Source\Validation\Image $validImage
+        \PHPCuong\CustomerProfilePicture\Model\Source\Validation\Image $validImage
     ) {
         $this->validImage = $validImage;
     }

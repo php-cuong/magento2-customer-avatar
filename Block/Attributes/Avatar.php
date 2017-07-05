@@ -4,11 +4,11 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-02 12:04:38
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-04 22:19:40
+ * @Last Modified time: 2017-07-05 08:17:47
  * @website: http://giaphugroup.com
  */
 
-namespace PHPCuong\CustomerAttributes\Block\Attributes;
+namespace PHPCuong\CustomerProfilePicture\Block\Attributes;
 
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\App\Filesystem\DirectoryList;
@@ -28,17 +28,16 @@ class Avatar extends \Magento\Framework\View\Element\Template
     protected $viewFileUrl;
 
     /**
-     * @var \Magento\Framework\App\Http\Context
+     * @var \Magento\Customer\Model\Customer
      */
     protected $customer;
+
     /**
      *
      * @param Context $context
-     * @param QuestionHelper $questionHelper
-     * @param CategoryHelper $categoryHelper
-     * @param DirectoryList $directoryList
-     * @param FaqResourceModel $faqResourceModel
-     * @param ConfigHelper $configHelper
+     * @param ObjectManagerInterface $objectManager
+     * @param \Magento\Framework\View\Asset\Repository $viewFileUrl
+     * @param \Magento\Customer\Model\Customer $customer
      */
     public function __construct(
         Context $context,
@@ -80,7 +79,7 @@ class Avatar extends \Magento\Framework\View\Element\Template
         if ($this->checkImageFile(base64_encode($file)) === true) {
             return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($file)]);
         }
-        return $this->viewFileUrl->getUrl('PHPCuong_CustomerAttributes::images/no-profile-photo.jpg');
+        return $this->viewFileUrl->getUrl('PHPCuong_CustomerProfilePicture::images/no-profile-photo.jpg');
     }
 
     /**
@@ -91,12 +90,12 @@ class Avatar extends \Magento\Framework\View\Element\Template
     {
         if ($customer_id) {
             $customerDetail = $this->customer->load($customer_id);
-            if ($customerDetail && !empty($customerDetail->getCustomerPicture())) {
-                if ($this->checkImageFile(base64_encode($customerDetail->getCustomerPicture())) === true) {
-                    return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($customerDetail->getCustomerPicture())]);
+            if ($customerDetail && !empty($customerDetail->getProfilePicture())) {
+                if ($this->checkImageFile(base64_encode($customerDetail->getProfilePicture())) === true) {
+                    return $this->getUrl('viewfile/avatar/view/', ['image' => base64_encode($customerDetail->getProfilePicture())]);
                 }
             }
         }
-        return $this->viewFileUrl->getUrl('PHPCuong_CustomerAttributes::images/no-profile-photo.jpg');
+        return $this->viewFileUrl->getUrl('PHPCuong_CustomerProfilePicture::images/no-profile-photo.jpg');
     }
 }

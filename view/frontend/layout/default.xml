@@ -7,13 +7,13 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="PHPCuong_CustomerAttributes::css/global-avatar.css"/>
-        <css src="PHPCuong_CustomerAttributes::css/review-item.css"/>
+        <css src="PHPCuong_CustomerProfilePicture::css/global-avatar.css"/>
+        <css src="PHPCuong_CustomerProfilePicture::css/review-item.css"/>
     </head>
     <body>
         <referenceBlock name="customer">
             <action method='setTemplate'>
-                <argument name='template' xsi:type='string'>PHPCuong_CustomerAttributes::account/customer.phtml</argument>
+                <argument name='template' xsi:type='string'>PHPCuong_CustomerProfilePicture::account/customer.phtml</argument>
             </action>
         </referenceBlock>
     </body>
