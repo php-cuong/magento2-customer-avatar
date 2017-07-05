@@ -16,7 +16,7 @@ This is an awesome module, it allows the customers the opportunity to personaliz
 ### 1 - Using Composer
 
 ```
-composer require php-cuong/magento2-faqs-extensions:dev-master
+composer require php-cuong/magento2-customer-avatar:dev-master
 
 ```
 
