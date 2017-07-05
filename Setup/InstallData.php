@@ -4,7 +4,7 @@
  * @Author: Ngo Quang Cuong
  * @Date:   2017-07-01 08:12:19
  * @Last Modified by:   nquangcuong
- * @Last Modified time: 2017-07-05 12:01:21
+ * @Last Modified time: 2017-07-05 12:08:28
  * @website: http://giaphugroup.com
  */
 
@@ -67,6 +67,7 @@ class InstallData implements InstallDataInterface
             'type' => 'varchar',
             'label' => 'Profile Picture',
             'input' => 'image',
+            'backend' => 'PHPCuong\CustomerProfilePicture\Model\Attribute\Backend\Avatar',
             'required' => false,
             'visible' => true,
             'user_defined' => true,
