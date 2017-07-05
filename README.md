@@ -1,6 +1,10 @@
 # Magento 2 Customer Avatar
 This is an awesome module, it allows the customers the opportunity to personalize their account by uploading an avatar.
 
+Please donate if you enjoy my extension.
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR756BABGNDC4)
+
 ## The features of this extension:
 ### Frontend:
 - The customer can upload a new avatar.
@@ -56,6 +60,6 @@ Log into your Magento admin, go to Customers -> All Customers
 ## Donations
 Please donate if you enjoy my extension.
 
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3SLETZ2BY26LQ)
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR756BABGNDC4)
 
 
