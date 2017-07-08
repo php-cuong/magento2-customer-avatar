@@ -5,6 +5,9 @@ Please donate if you enjoy my extension.
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR756BABGNDC4)
 
+## See the video How I can make this extension here
+https://www.youtube.com/watch?v=Ba8jxfQLK4A
+
 ## The features of this extension:
 ### Frontend:
 - The customer can upload a new avatar.
