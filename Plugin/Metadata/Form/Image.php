@@ -34,6 +34,6 @@ class Image
             unset($_FILES[$attrCode]['tmp_name']);
         }
 
-        return [];
+        return [$value];
     }
 }
