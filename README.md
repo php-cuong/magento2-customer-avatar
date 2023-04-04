@@ -1,4 +1,4 @@
-# Magento 2 Customer Avatar
+# How to add the profile picture for a customer in Magento 2
 This is an awesome module, it allows the customers the opportunity to personalize their account by uploading an avatar.
 
 Please donate if you enjoy my extension.
