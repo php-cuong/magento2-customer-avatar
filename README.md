@@ -8,8 +8,8 @@ Please donate if you enjoy my extension.
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR756BABGNDC4)
 
-## See the video How I can make this extension here
-https://www.youtube.com/watch?v=akcaOBrLTzM&list=PL98CDCbI3TNvPczWSOnpaMoyxVISLVzYQ
+## See the video How this extension can work here
+https://www.youtube.com/watch?v=3Tt82EvXLLA&list=PL98CDCbI3TNvPczWSOnpaMoyxVISLVzYQ&index=96
 
 ## The features of this extension:
 ### Frontend:
